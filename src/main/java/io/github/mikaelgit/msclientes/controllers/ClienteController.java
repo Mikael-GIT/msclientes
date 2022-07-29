@@ -19,9 +19,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import io.github.mikaelgit.msclientes.domain.Cliente;
 import io.github.mikaelgit.msclientes.dtos.ClienteSaveRequest;
 import io.github.mikaelgit.msclientes.services.ClienteService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/clientes")
+@Slf4j
 public class ClienteController {
 
     @Autowired
@@ -29,6 +31,7 @@ public class ClienteController {
 
     @GetMapping
     public String status() {
+        log.info("Obtendo o status do microservice de clientes");
         return "ok";
     }
 
